@@ -2,5 +2,6 @@
 
 INTEGRANTES:
 
-Juan Mateo Tarifa
-Esteban Agustin Ibañez
+-Juan Mateo Tarifa
+
+-Esteban Agustin Ibañez
