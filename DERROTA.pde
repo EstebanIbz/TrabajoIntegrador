@@ -1,0 +1,6 @@
+class Derrota{
+  
+  public Derrota(){
+  }
+  
+}

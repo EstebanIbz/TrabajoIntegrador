@@ -1,5 +1,7 @@
 class Tanque{
  
+ public Tanque(){
+ }
   
  public void display(){
    

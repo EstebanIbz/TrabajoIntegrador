@@ -1,11 +1,21 @@
+// -- DECLARANDO LAS VARIABLES --
+// Representación de los enemigos
 private PImage spriteEnemigo, spriteBala, spritePowerUp, spriteTanque, fondo;
+// Estado del juego, los valores que adquiere el StateMachine
 private int estado;
+// Menu del juego, un valor del StateMachine
 private MENU menu;
+// Escenario del juego, un valor del StateMachine
+private Escenario escenario;
 
+// -- FINALIZANDO LA DECLARACIÓN DE VARIABLES --
+
+// Setup, se ejecuta una vez 
 void setup(){
-  size(600,600);
-  estado = StateMachine.MENU;
-  menu = new MENU();
+  size(600,600); // Tamaño de la ventana
+  estado = StateMachine.MENU; // Se inicia el estado del juego en el MENU
+  menu = new MENU(); // Creamos el objeto menu de tipo MENU
+  escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
 
 }
 
@@ -18,6 +28,7 @@ void draw(){
    break;
    
    case StateMachine.ESCENARIO:
+   escenario.display();
    break;
    
    case StateMachine.DERROTA:
