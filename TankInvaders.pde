@@ -17,18 +17,19 @@ void setup(){
   menu = new MENU(); // Creamos el objeto menu de tipo MENU
   escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
 
-}
-
+} // FIN SETUP
+ 
+//Draw, se actualiza cada () tiempo
 void draw(){
   
-  
+// Realizamos las transiciones de las pantallas segun el estado
   switch (estado) {
    case StateMachine.MENU:
-   menu.display();
+   menu.display(); //Visualizacion del MENU
    break;
    
    case StateMachine.ESCENARIO:
-   escenario.display();
+   escenario.display(); //Visualizacion del ESCENARIO
    break;
    
    case StateMachine.DERROTA:
@@ -37,27 +38,35 @@ void draw(){
    case StateMachine.VICTORIA:
    break;
   }
-}
+} //FIN DRAW
 
+// -- METODOS DE PROCESSING -- 
+
+// REALIZA UNA ACCION SEGÚN EL CLICK DEL RATÓN
 public void mousePressed(){
+// Cuando el usuario esta en la pantalla MENU debe hacer click para cambiar a la pantalla ESCENARIO
  if(estado==StateMachine.MENU){
   estado=StateMachine.ESCENARIO; 
   println("MENU");
  }
+ // Cuando el usuario esta en la pantalla ESCENARIO debe hacer click para cambiar a la pantalla DERROTA
   else if(estado==StateMachine.ESCENARIO){
   estado=StateMachine.DERROTA; 
   println("ESCENARIO");
  }
+ // Cuando el usuario esta en la pantalla DERROTA debe hacer click para cambiar a la pantalla MENU
   else if(estado==StateMachine.DERROTA){
   estado=StateMachine.MENU; 
    println("DERROTA");
  }
+ // Cuando el usuario esta en la pantalla VICTORIA debe hacer click para cambiar a la pantalla MENU
  else if(estado==StateMachine.VICTORIA){
   estado=StateMachine.MENU; 
    println("VICTORIA");
  }
 }
 
+// REALIZA UNA ACCIÓN SEGÚN EL INPUT DEL TECLADO
 public void keyPressed(){
   
 }
