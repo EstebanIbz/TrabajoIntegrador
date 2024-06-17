@@ -1,4 +1,4 @@
-// Clase que
+// Clase de VICTORIA del StateMachine
 class Victoria{
  
 // -- CONSTRUCTORES --

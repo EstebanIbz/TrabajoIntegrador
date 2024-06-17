@@ -12,7 +12,7 @@ private Escenario escenario;
 
 // Setup, se ejecuta una vez 
 void setup(){
-  size(600,600); // Tamaño de la ventana
+  size(1000,720); // Tamaño de la ventana
   estado = StateMachine.MENU; // Se inicia el estado del juego en el MENU
   menu = new MENU(); // Creamos el objeto menu de tipo MENU
   escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
@@ -26,6 +26,7 @@ void draw(){
   switch (estado) {
    case StateMachine.MENU:
    menu.display(); //Visualizacion del MENU
+   menu.displayTexto();
    break;
    
    case StateMachine.ESCENARIO:
