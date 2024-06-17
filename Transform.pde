@@ -2,7 +2,7 @@
 class Transform{
   
   // -- CONSTRUCTORES --
-  public Transform(){
+  public Transform(){ //Constructor por defecto
   }
   
  private PVector posicion; 

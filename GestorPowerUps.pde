@@ -3,7 +3,7 @@ class GestorPowerUps{
  private PowerUp powerUps;
  
 // -- CONSTRUCTORES --
-  public GestorPowerUps(){
+  public GestorPowerUps(){ //Constructor por defecto
   }
     
 // -- MÉTODOS --   

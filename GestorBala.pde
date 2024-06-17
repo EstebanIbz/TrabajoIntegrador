@@ -3,7 +3,7 @@ class GestorBalas{
  private Bala balas;
 
 // -- CONSTRUCTORES --
-  public GestorBalas(){
+  public GestorBalas(){ //Constructor por defecto
   }
 
 // -- MÉTODOS -- 

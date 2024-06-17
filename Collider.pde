@@ -3,7 +3,7 @@ class Collider{
  private float radio;
 
 // -- CONSTRUCTORES --
- public Collider(){
+ public Collider(){ //Constructor por defecto
  }
  
 // -- MÉTODOS -- 

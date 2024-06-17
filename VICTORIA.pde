@@ -2,7 +2,7 @@
 class Victoria{
  
 // -- CONSTRUCTORES --
-  public Victoria(){
+  public Victoria(){ //Constructor por defecto
     
   }
   

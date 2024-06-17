@@ -2,7 +2,7 @@
 class Tanque{
  
 // -- CONSTRUCTORES --
- public Tanque(){
+ public Tanque(){ //Constructor por defecto
  }
  
   

@@ -2,7 +2,7 @@
 class DeltaTime{
   
 // -- CONSTRUCTORES --
-  public DeltaTime(){
+  public DeltaTime(){ //Constructor por defecto
   }
  
 // -- MÉTODOS -- 

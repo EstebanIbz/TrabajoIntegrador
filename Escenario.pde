@@ -6,7 +6,7 @@ class Escenario{
   private PImage escenarioImage;
   
 // -- CONSTRUCTORES --
-  public Escenario(){
+  public Escenario(){ //Constructor por defecto
     escenarioImage = loadImage("Preview.png"); 
   }
   

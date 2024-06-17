@@ -2,7 +2,7 @@
 class Derrota{
 
 // -- CONSTRUCTORES --
-  public Derrota(){
+  public Derrota(){ //Constructor por defecto
   }
   
 }

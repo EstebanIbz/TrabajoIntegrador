@@ -3,7 +3,7 @@ class PowerUp{
  private int puntaje;
  
 // -- CONSTRUCTORES --
- public PowerUp(){
+ public PowerUp(){ //Constructor por defecto
  }
 
 // -- MÉTODOS -- 

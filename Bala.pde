@@ -3,7 +3,7 @@ class Bala{
  private int daño;
 
 // -- CONSTRUCTORES --
- public  Bala(){
+ public  Bala(){ //Constructor por defecto
  }
 
 // -- MÉTODOS -- 

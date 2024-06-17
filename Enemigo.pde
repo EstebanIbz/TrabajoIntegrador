@@ -4,7 +4,7 @@ class Enemigo{
  private int puntaje;
  
 // -- CONSTRUCTORES --
- public Enemigo(){
+ public Enemigo(){ //Constructor por defecto
  }
 
 // -- MÉTODOS -- 

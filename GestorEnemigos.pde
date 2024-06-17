@@ -3,7 +3,7 @@ class GestorEnemigos{
  private Enemigo enemigos;
 
 // -- CONSTRUCTORES --
- public GestorEnemigos(){
+ public GestorEnemigos(){ //Constructor por defecto
  }
 
 // -- MÉTODOS -- 
