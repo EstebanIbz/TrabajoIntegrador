@@ -1,3 +1,6 @@
+//IMPORTACION DE BIBLIOTECAS//
+import ddf.minim.*; // importando bibliotecas para reproducir sonidos
+
 // -- DECLARANDO LAS VARIABLES --
 // Representación de los enemigos
 private PImage spriteEnemigo, spriteBala, spritePowerUp, spriteTanque, fondo;
@@ -7,15 +10,20 @@ private int estado;
 private MENU menu;
 // Escenario del juego, un valor del StateMachine
 private Escenario escenario;
-
+// Variables para la musica
+private Minim minim;
+private AudioPlayer musicaTitulo;
 // -- FINALIZANDO LA DECLARACIÓN DE VARIABLES --
 
 // Setup, se ejecuta una vez 
 void setup(){
-  size(1000,720); // Tamaño de la ventana
+  size(1000,620); // Tamaño de la ventana
   estado = StateMachine.MENU; // Se inicia el estado del juego en el MENU
   menu = new MENU(); // Creamos el objeto menu de tipo MENU
   escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
+  minim = new Minim(this);
+  musicaTitulo = minim.loadFile("TitleSong.mp3"); //  La musica se carga
+  musicaTitulo.loop(); // La cancion se reproduce indefinidamente
 
 } // FIN SETUP
  
