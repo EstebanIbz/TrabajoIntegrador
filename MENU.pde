@@ -2,11 +2,12 @@
 class MENU{
  private PImage menuImage;
  private PImage tituloJuego;
+ private Gif pantallaInicio;
  
 // -- CONSTRUCTORES --
 // Constructor por defecto
  public MENU(){
-  menuImage = loadImage("Menu.png"); 
+    menuImage = loadImage("Menu.png"); 
   tituloJuego= loadImage("titulo.png");
  }
  
@@ -24,5 +25,7 @@ class MENU{
     text("Haga clic para iniciar", width/2, height-100);
  }
 
-  
+  public void displayTitulo(){
+    this.pantallaInicio.play();   
+  }
 }

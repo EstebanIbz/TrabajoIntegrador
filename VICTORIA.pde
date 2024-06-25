@@ -5,5 +5,4 @@ class Victoria{
   public Victoria(){ //Constructor por defecto
     
   }
-  
 }

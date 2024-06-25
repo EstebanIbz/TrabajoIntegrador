@@ -1,6 +1,8 @@
 //IMPORTACION DE BIBLIOTECAS//
 import ddf.minim.*; // importando bibliotecas para reproducir sonidos
 
+import gifAnimation.*; // importando biblioteca para reproducir archivos .GIF
+
 // -- DECLARANDO LAS VARIABLES --
 // Representación de los enemigos
 private PImage spriteEnemigo, spriteBala, spritePowerUp, spriteTanque, fondo;
@@ -13,6 +15,9 @@ private Escenario escenario;
 // Variables para la musica
 private Minim minim;
 private AudioPlayer musicaTitulo;
+private AudioPlayer Gameplaysong;
+private AudioPlayer LostSong;
+private AudioPlayer WinSong;
 // -- FINALIZANDO LA DECLARACIÓN DE VARIABLES --
 
 // Setup, se ejecuta una vez 
@@ -22,9 +27,11 @@ void setup(){
   menu = new MENU(); // Creamos el objeto menu de tipo MENU
   escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
   minim = new Minim(this);
-  musicaTitulo = minim.loadFile("TitleSong.mp3"); //  La musica se carga
+  musicaTitulo = minim.loadFile("OST.mp3"); //  La musica se carga
   musicaTitulo.loop(); // La cancion se reproduce indefinidamente
-
+  Gameplaysong = minim.loadFile("Gameplay.mp3"); // carga la musica del estado Jugando
+  LostSong = minim.loadFile("lost.mp3");
+  WinSong = minim.loadFile("win.mp3");
 } // FIN SETUP
  
 //Draw, se actualiza cada () tiempo
@@ -39,12 +46,17 @@ void draw(){
    
    case StateMachine.ESCENARIO:
    escenario.display(); //Visualizacion del ESCENARIO
+   Gameplaysong.play();  // reproducimos la cancion del juego
    break;
    
    case StateMachine.DERROTA:
+   Gameplaysong.pause(); // pausamos la cancion del juego
+   LostSong.play(); // reproducimos la cancion de derrota
    break;
    
    case StateMachine.VICTORIA:
+   Gameplaysong.pause(); // pausamos la cancion del juego
+   WinSong.play(); // reproducimos la cancion de victoria
    break;
   }
 } //FIN DRAW
@@ -56,21 +68,31 @@ public void mousePressed(){
 // Cuando el usuario esta en la pantalla MENU debe hacer click para cambiar a la pantalla ESCENARIO
  if(estado==StateMachine.MENU){
   estado=StateMachine.ESCENARIO; 
-  println("MENU");
+  println("MENU"); // se muestra por consola el escenario anterior
+  musicaTitulo.pause(); // pausamos la musica del titulo
+  musicaTitulo.rewind(); //Resetamos la musica
+  Gameplaysong.rewind();
  }
  // Cuando el usuario esta en la pantalla ESCENARIO debe hacer click para cambiar a la pantalla DERROTA
   else if(estado==StateMachine.ESCENARIO){
   estado=StateMachine.DERROTA; 
-  println("ESCENARIO");
+  Gameplaysong.loop(); // se pone en bucle la cancion
+  println("ESCENARIO"); 
  }
  // Cuando el usuario esta en la pantalla DERROTA debe hacer click para cambiar a la pantalla MENU
   else if(estado==StateMachine.DERROTA){
   estado=StateMachine.MENU; 
+  LostSong.pause(); // pausamos la musica de derrota
+  LostSong.rewind(); // resetamos la musica de derrota
+  musicaTitulo.loop(); // ponemos la musica del titulo
    println("DERROTA");
  }
  // Cuando el usuario esta en la pantalla VICTORIA debe hacer click para cambiar a la pantalla MENU
  else if(estado==StateMachine.VICTORIA){
   estado=StateMachine.MENU; 
+  WinSong.pause(); // pausamos la musica de victoria
+  WinSong.rewind(); // resetamos la musica de victoria
+  musicaTitulo.loop();// ponemos la musica del titulo
    println("VICTORIA");
  }
 }
