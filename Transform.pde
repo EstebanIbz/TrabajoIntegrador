@@ -1,9 +1,11 @@
 // Clase que modifica la posicion de los objetos
-class Transform{
-  
+class Transform {
+  private PVector posicion; //Posicion de objeto
+  private PVector escala; //Escala del objeto
+
   // -- CONSTRUCTORES --
-  public Transform(){ //Constructor por defecto
+  public Transform(PVector posicion, PVector Escala) { //Constructor parametrizado
+    this.posicion = posicion;
+    this.escala = escala;
   }
-  
- private PVector posicion; 
 }
