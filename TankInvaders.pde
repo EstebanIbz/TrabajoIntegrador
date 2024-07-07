@@ -5,7 +5,6 @@ import gifAnimation.*; // importando biblioteca para reproducir archivos .GIF
 
 // -- DECLARANDO LAS VARIABLES --
 // Representación de los enemigos
-private PImage spriteEnemigo, spriteBala, spritePowerUp, spriteTanque;
 private PImage fondo, DerrotaImage, WinImage, IngameImage;
 // Estado del juego, los valores que adquiere el StateMachine
 private int estado;
@@ -25,6 +24,9 @@ private AudioPlayer musicaTitulo;
 private AudioPlayer Gameplaysong;
 private AudioPlayer LostSong;
 private AudioPlayer WinSong;
+
+GestorEnemigos gestorEnemigos;
+GestorBalas gestorBalas;
 // -- FINALIZANDO LA DECLARACIÓN DE VARIABLES --
 
 // Setup, se ejecuta una vez
@@ -34,7 +36,9 @@ void setup() {
   menu = new MENU(); // Creamos el objeto menu de tipo MENU
   escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
   derrota = new Derrota(); // Creamos el objeto derrota tipo DERROTA
-  win = new Victoria(); // 
+  win = new Victoria(); //
+  gestorBalas = new GestorBalas();
+  gestorEnemigos = new GestorEnemigos();
  
 
   // definicion de la musica y sonidos del juego
@@ -73,6 +77,7 @@ void draw() {
     WinSong.play(); // reproducimos la cancion de victoria
     break;
   }
+  gestorEnemigos.display();
 } //FIN DRAW
 
 // -- METODOS DE PROCESSING --
