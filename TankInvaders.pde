@@ -11,6 +11,8 @@ private PImage fondo, DerrotaImage, WinImage, IngameImage;
 private int estado;
 // Menu del juego, un valor del StateMachine
 private MENU menu;
+//
+
 // Escenario del juego, un valor del StateMachine
 private Escenario escenario;
 // Derrota del juego , un valor del StateMachine
@@ -32,7 +34,8 @@ void setup() {
   menu = new MENU(); // Creamos el objeto menu de tipo MENU
   escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
   derrota = new Derrota(); // Creamos el objeto derrota tipo DERROTA
-  win = new Victoria();
+  win = new Victoria(); // 
+ 
 
   // definicion de la musica y sonidos del juego
   minim = new Minim(this);
@@ -111,5 +114,8 @@ public void mousePressed() {
 }
 
 // REALIZA UNA ACCIÓN SEGÚN EL INPUT DEL TECLADO
-public void keyPressed() {
+public void keyReleased() {
+ if (keyCode == ENTER) {
+    escenario.tanque.disparar();
+  }
 }

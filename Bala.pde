@@ -9,13 +9,17 @@ class Bala {
   // -- CONSTRUCTORES --
   public  Bala(PVector posicion) { //Constructor por defecto
     this.velocidad = 2;
+    this.daño = 10;
     this.transform = new Transform(posicion, new PVector (0.5, 0.5));
     this.colision = new Collider(transform, 20);
-    this.imagen = new ImageComponent(spriteBala, transform);
+    this.imagen = new ImageComponent("Bala.png", transform);
   }
 
   // -- MÉTODOS --
   public void display() {
+    imagen.draw();
+    transform.move(2,0);
+    
   }
 
   public void verificarColision() {
