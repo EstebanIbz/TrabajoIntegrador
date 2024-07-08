@@ -2,32 +2,39 @@
 class Tanque {
   private Transform transform;
   private ImageComponent imagen;
-  private GestorBalas gestorB;
+  private Collider colider;
+  private boolean perder;
+  private int puntaje;
 
   // -- CONSTRUCTORES --
-    public Tanque(PVector posicion) {
+  public Tanque(PVector posicion) {
     this.transform = new Transform(posicion, new PVector(0.5, 0.5));
     this.imagen = new ImageComponent("1.png", transform);
-    this.gestorB = new GestorBalas();
+    this.colider = new Collider (transform, 20);
+    this.perder = false;
+    this.puntaje = 0;
   }
 
   // -- MÉTODOS --
-   public void display() {
-      imagen.draw();
-       if (keyPressed) {
-       if (keyCode == UP) {
-      transform.move(0, -15);
-    } else if (keyCode == DOWN) {
-      transform.move(0, 15);
-    } 
+  public void display() {
+    imagen.draw();
+    this.colider.transform = this.transform;
+    if (keyPressed) {
+      if (keyCode == UP) {
+        transform.move(0, -5,1);
+      } else if (keyCode == DOWN) {
+        transform.move(0, 10,1);
+      }
+    }
+ 
+  }
 
+  public void disparar() { //Metodo para disparar, añadiendo balasal gestor balas creado en el escenario
+    escenario.gestorBalas.addBullet(new Bala(transform.posicion.copy()));
   }
-  gestorB.updateBalas();
-   }
-   
-   public void disparar(){
-   gestorB.addBullet(new Bala(transform.posicion.copy()));
-   }
   public void sumarPunto() {
+    this.puntaje++;
   }
+  
+  
 }

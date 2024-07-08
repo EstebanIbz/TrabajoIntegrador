@@ -1,6 +1,6 @@
 // Clase de DERROTA del StateMachine
 class Derrota {
-  private PImage DerrotaImage;
+  private PImage DerrotaImage; //Atributo de la imagen de DERROTA
 
 
   // -- CONSTRUCTORES --
@@ -9,7 +9,7 @@ class Derrota {
   }
 
   // -- MÉTODOS --
-  public void display() {
+  public void display() { //Dibuja la imagen de DERROTA
     imageMode(CENTER);
     image(DerrotaImage, width/2, height/2);
   }

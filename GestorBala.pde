@@ -7,39 +7,35 @@ class GestorBalas {
   }
 
   // -- MÉTODOS --
-  public void updateBalas(){
-for (int i = balas.size() - 1; i >= 0; i--) {
-      Bala bala = balas.get(i);
-      bala.display();
-      //bala.transform.move(15, 0);   
-      if (bala.fueraDePantalla()){
-       eliminarBala(i);
-      }
+     public void updateBalas(GestorEnemigos gestorEnemigos) {
+        ArrayList<Bala> balasAEliminar = new ArrayList<Bala>();
+        ArrayList<Enemigo> enemigos = gestorEnemigos.getEnemigos();
+
+        for (Bala bala : balas) {
+            bala.display();
+            boolean colisionDetectada = false;
+
+            for (Enemigo enemigo : enemigos) {
+                if (bala.verificarColisionEnemigo(enemigo)) {
+                    println("Hay colisión");
+                    colisionDetectada = true;
+                    break;
+                }
+            }
+
+            if (colisionDetectada || bala.fueraDePantalla()) {
+                balasAEliminar.add(bala);
+            }
+        }
+
+        balas.removeAll(balasAEliminar);
     }
-  }
 
   public void addBullet(Bala bala) {
     this.balas.add(bala);
   }
-  
- public void verificarColision(ArrayList<Enemigo> enemigos) {
-        for (int i = balas.size() - 1; i >= 0; i--) {
-            Bala bala = balas.get(i);
-        for(int j = enemigos.size() -1;j >= 0; j--){
-            Enemigo enemigo = enemigos.get(j);
-             if (bala.getCollider().verificarColision(enemigo.getCollider())) {
-                enemigo.disminuirVida(bala.daño());
-                 eliminarBala(i);
-                 break;        
-       }
-     }
-   }
- }
-  public void eliminarBala(int index) {
-    balas.remove(index);
-  }
-  public ArrayList<Bala> getBalas(){
+
+  public ArrayList<Bala> getBalas() {
     return balas;
   }
- }
-  
+}

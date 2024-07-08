@@ -24,9 +24,6 @@ private AudioPlayer musicaTitulo;
 private AudioPlayer Gameplaysong;
 private AudioPlayer LostSong;
 private AudioPlayer WinSong;
-
-GestorEnemigos gestorEnemigos;
-GestorBalas gestorBalas;
 // -- FINALIZANDO LA DECLARACIÓN DE VARIABLES --
 
 // Setup, se ejecuta una vez
@@ -36,9 +33,7 @@ void setup() {
   menu = new MENU(); // Creamos el objeto menu de tipo MENU
   escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
   derrota = new Derrota(); // Creamos el objeto derrota tipo DERROTA
-  win = new Victoria(); //
-  gestorBalas = new GestorBalas();
-  gestorEnemigos = new GestorEnemigos();
+  win = new Victoria(); //Creamos la pantalla de victoria
  
 
   // definicion de la musica y sonidos del juego
@@ -77,7 +72,7 @@ void draw() {
     WinSong.play(); // reproducimos la cancion de victoria
     break;
   }
-  gestorEnemigos.display();
+
 } //FIN DRAW
 
 // -- METODOS DE PROCESSING --
@@ -92,20 +87,17 @@ public void mousePressed() {
     Gameplaysong.rewind();
     estado=StateMachine.ESCENARIO;
   }
-  // Cuando el usuario esta en la pantalla ESCENARIO debe hacer click para cambiar a la pantalla DERROTA
-  else if (estado==StateMachine.ESCENARIO) {
-    estado=StateMachine.DERROTA;
-    Gameplaysong.loop(); // se pone en bucle la cancion
-    println("ESCENARIO");
-  }
+  
   // Cuando el usuario esta en la pantalla DERROTA debe hacer click para cambiar a la pantalla MENU
   else if (estado==StateMachine.DERROTA) {
+    
     estado=StateMachine.MENU;
     LostSong.pause(); // pausamos la musica de derrota
     LostSong.rewind(); // resetamos la musica de derrota
     musicaTitulo.loop(); // ponemos la musica del titulo
     println("DERROTA");
     estado=StateMachine.MENU;
+    escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
   }
   // Cuando el usuario esta en la pantalla VICTORIA debe hacer click para cambiar a la pantalla MENU
   else if (estado==StateMachine.VICTORIA) {
@@ -115,6 +107,7 @@ public void mousePressed() {
     musicaTitulo.loop();// ponemos la musica del titulo
     println("VICTORIA");
     estado=StateMachine.MENU;
+    escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
   }
 }
 

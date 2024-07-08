@@ -15,4 +15,12 @@ class Collider {
     float distancia = PVector.dist(this.transform.posicion, otroCollider.transform.posicion);
     return distancia < this.radio + otroCollider.radio;
   }
+  
+  public void displayCircle(color Color) { //Metodo para dibujar el radio de colision
+    stroke(Color);
+    strokeWeight(2);
+    noFill();
+    circle(this.transform.posicion.x, this.transform.posicion.y, this.radio);
+  }
+  
 }
