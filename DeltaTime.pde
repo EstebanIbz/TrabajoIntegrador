@@ -1,7 +1,7 @@
 // Clase que controla la velocidad de ejecución del juego
 class DeltaTime {
-  private float lastTime;
-  private float deltaTime;
+  private float lastTime; //Atributo para calcular el tiempo transcurrido
+  private float deltaTime; //Atributo para calcular el tiempo transcurrido
 
   // -- CONSTRUCTORES --
   public DeltaTime() { //Constructor por defecto
@@ -10,13 +10,13 @@ class DeltaTime {
   }
 
   // -- MÉTODOS --
-  public void update() {
+  public void update() { //Calcula el deltaTime
     float currentTime = millis();
     deltaTime = (currentTime - lastTime) / 1000.0;
     lastTime = currentTime;
   }
 
-  public float getDeltaTime() {
+  public float getDeltaTime() { //Devuelve el deltaTime
     return deltaTime;
   }
 }

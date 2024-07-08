@@ -7,7 +7,7 @@ class Victoria {
   }
 
   // -- MÉTODOS --
-  public void display() {
+  public void display() { //Metodo que dibuja la pnatalla de victoria
     imageMode(CENTER);
     image(WinImage, width/2, height/2);
   }

@@ -13,14 +13,14 @@ class Transform {
   public Transform() {
     this(new PVector(0, 0), new PVector(1, 1)); // Valores por defecto
   }
-  void move(float x, float y, float deltaTime) {
+  void move(float x, float y, float deltaTime) { //Metodo para modificar la posicion del objeto
     posicion.add(x * deltaTime, y * deltaTime);
   }
-   public PVector getPosicion() {
+   public PVector getPosicion() { //Devuelve la posicion
     return posicion;
   }
 
-  public PVector getEscala() {
+  public PVector getEscala() { //Devuelve la escala
     return escala;
   }
 }

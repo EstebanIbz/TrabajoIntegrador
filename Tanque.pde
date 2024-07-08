@@ -3,11 +3,11 @@ class Tanque {
   private Transform transform;
   private ImageComponent imagen;
   private Collider colider;
-  private boolean perder;
-  private int puntaje;
+  private boolean perder; //Atributo booleano que verifica si el usuario pierde
+  private int puntaje; //Atributo del puntaje del jugador
 
   // -- CONSTRUCTORES --
-  public Tanque(PVector posicion) {
+  public Tanque(PVector posicion) { //Costructor parametrizado
     this.transform = new Transform(posicion, new PVector(0.5, 0.5));
     this.imagen = new ImageComponent("1.png", transform);
     this.colider = new Collider (transform, 20);
@@ -16,7 +16,7 @@ class Tanque {
   }
 
   // -- MÉTODOS --
-  public void display() {
+  public void display() { //Metodo que dicuja el tanque 
     imagen.draw();
     this.colider.transform = this.transform;
     if (keyPressed) {
@@ -32,7 +32,7 @@ class Tanque {
   public void disparar() { //Metodo para disparar, añadiendo balasal gestor balas creado en el escenario
     escenario.gestorBalas.addBullet(new Bala(transform.posicion.copy()));
   }
-  public void sumarPunto() {
+  public void sumarPunto() { //Metodo para sumar el puntaje del jugador para ganar
     this.puntaje++;
   }
   

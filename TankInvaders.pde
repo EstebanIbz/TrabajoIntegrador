@@ -5,7 +5,7 @@ import gifAnimation.*; // importando biblioteca para reproducir archivos .GIF
 
 // -- DECLARANDO LAS VARIABLES --
 // Representación de los enemigos
-private PImage fondo, DerrotaImage, WinImage, IngameImage;
+
 // Estado del juego, los valores que adquiere el StateMachine
 private int estado;
 // Menu del juego, un valor del StateMachine

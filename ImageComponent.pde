@@ -4,12 +4,12 @@ class ImageComponent {
   private Transform transform;
 
   // -- CONSTRUCTORES --
-  public ImageComponent(String imagePath, Transform transform) {
+  public ImageComponent(String imagePath, Transform transform) { //Constructor parametrizado
     this.transform = transform;
     this.image = loadImage(imagePath);
   }
 
-  public void draw() {
+  public void draw() { //Metodo para dibujar las imagenes del juego
       imageMode(CENTER);
       image(image, transform.posicion.x, transform.posicion.y, image.width * transform.escala.x, image.height * transform.escala.y);
   }

@@ -1,11 +1,9 @@
 // Clase que representa el escenario que se muestra en el estado ESCENARIO
 class Escenario {
   private Tanque tanque;
-  private GestorPowerUps gestorPowerUps;
   private GestorEnemigos gestorEnemigos;
   private GestorBalas gestorBalas;
   private PImage escenarioImage;
-
 
 
   // -- CONSTRUCTORES --
@@ -17,7 +15,7 @@ class Escenario {
   }
 
   // -- MÉTODOS --
-  public void display() {
+  public void display() { //Metodo para dibujar el escenario de juego y todos los elementos con los que el jugador interactua
     imageMode(CENTER);
     image(escenarioImage, width/2, height/2);
     this.tanque.display();
