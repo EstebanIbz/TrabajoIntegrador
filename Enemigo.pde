@@ -32,7 +32,7 @@ class Enemigo {
   public void display() { //Metodo para dibujar el enemigo
     imagen.draw();
     this.transform.move(-4,0, 1);
-    //this.colision.displayCircle(0); //Muestra el radio de colision
+    this.colision.displayCircle(0); //Muestra el radio de colision
    
   }
   

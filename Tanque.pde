@@ -26,7 +26,7 @@ class Tanque {
         transform.move(0, 10,1);
       }
     }
- 
+ this.colider.displayCircle(0); //Muestra el radio de colision
   }
 
   public void disparar() { //Metodo para disparar, añadiendo balasal gestor balas creado en el escenario

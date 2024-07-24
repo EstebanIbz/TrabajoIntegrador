@@ -19,7 +19,7 @@ class Bala {
   public void display() { //Dibuja las balas
     imagen.draw();
     transform.move(this.velocidad, 0, 1); //Mueve la posicion de la bala en horizontal
-    //this.colision.displayCircle(0); //Muestra el radio de colision
+    this.colision.displayCircle(0); //Muestra el radio de colision
   }
   public PVector getPosicion() { //Nos da la posicion de la bala
     return transform.posicion;
