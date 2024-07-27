@@ -1,3 +1,4 @@
+import gifAnimation.*;
 // Clase del MENU del StateMachine
 class MENU {
   //private PImage menuImage;
@@ -19,7 +20,7 @@ class MENU {
   // -- MÉTODOS --
   // Constructor para dibujar la imagen del Menu
   public void display() {//Metodo para dibujar la imagen del menu
-  if(myGif != null){
+  if(myGif != null){ 
   image(myGif, 0,0);
     //image(menuImage, width/2, height/2);
     //image(tituloJuego, width/5, height/4, 300, 300); 

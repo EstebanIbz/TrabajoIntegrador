@@ -17,6 +17,7 @@ class Tanque {
 
   // -- MÉTODOS --
   public void display() { //Metodo que dicuja el tanque 
+  println(this.puntaje);
     imagen.draw();
     this.colider.transform = this.transform;
     if (keyPressed) {

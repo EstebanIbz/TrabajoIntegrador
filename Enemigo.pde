@@ -1,18 +1,18 @@
 // Clase del objeto enemigo, representa el enemigo
 class Enemigo {
-  private int vida; //Atributo que establece la vida del enemigo
-  private int puntaje; //Puntaje del enemigo
-  private ImageComponent imagen; //Componente imagen
-  private Collider colision; //Componente collider
-  private Transform transform; //Componente transform
+  protected int vida; //Atributo que establece la vida del enemigo
+  protected int puntaje; //Puntaje del enemigo
+  protected ImageComponent imagen; //Componente imagen
+  protected Collider colision; //Componente collider
+  protected Transform transform; //Componente transform
 
   // -- CONSTRUCTORES --
-  public Enemigo(PVector posicion) { //Constructor parametrizado
-    this.vida = 20;
-    this.puntaje = 10;
+  public Enemigo(PVector posicion , int vida, int puntaje, String imagenNombre) { //Constructor parametrizado
+    this.vida = vida;
+    this.puntaje = puntaje;
     this.transform = new Transform(posicion, new PVector (3.5, 3.5));
     this.colision = new Collider(transform, 50);
-    this.imagen = new ImageComponent("Cactus1.png", transform);
+    this.imagen = new ImageComponent( imagenNombre,transform);
   }
 
   // -- MÉTODOS --

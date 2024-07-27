@@ -30,7 +30,7 @@ private AudioPlayer WinSong;
 void setup() {
   size(1000, 620); // Tamaño de la ventana
   estado = StateMachine.MENU; // Se inicia el estado del juego en el MENU
-  menu = new MENU(); // Creamos el objeto menu de tipo MENU
+  menu = new MENU(this); // Creamos el objeto menu de tipo MENU
   escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
   derrota = new Derrota(); // Creamos el objeto derrota tipo DERROTA
   win = new Victoria(); //Creamos la pantalla de victoria
