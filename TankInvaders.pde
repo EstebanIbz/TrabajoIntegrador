@@ -52,7 +52,7 @@ void draw() {
   switch (estado) {
   case StateMachine.MENU:
     menu.display(); //Visualizacion del MENU
-    menu.displayTexto();
+    menu.displayTexto();   
     break;
 
   case StateMachine.ESCENARIO:
@@ -81,11 +81,11 @@ void draw() {
 public void mousePressed() {
   // Cuando el usuario esta en la pantalla MENU debe hacer click para cambiar a la pantalla ESCENARIO
   if (estado==StateMachine.MENU) {
-    println("MENU"); // se muestra por consola el escenario anterior
+    println("MENU>ESCENARIO"); // se muestra por consola el escenario anterior
     musicaTitulo.pause(); // pausamos la musica del titulo
-    musicaTitulo.rewind(); //Resetamos la musica
-    Gameplaysong.rewind();
-    estado=StateMachine.ESCENARIO;
+    musicaTitulo.rewind(); //Resetamos la musica del titulo
+    Gameplaysong.rewind(); //Reseteamos la musica del escenario
+    estado=StateMachine.ESCENARIO;//Pasamos a la pantalla escenario 
   }
   
   // Cuando el usuario esta en la pantalla DERROTA debe hacer click para cambiar a la pantalla MENU
