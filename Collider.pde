@@ -23,4 +23,5 @@ class Collider {
     circle(this.transform.posicion.x, this.transform.posicion.y, this.radio);
   }
   
+  
 }

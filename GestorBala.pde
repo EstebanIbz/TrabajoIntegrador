@@ -9,7 +9,7 @@ class GestorBalas {
   // -- MÉTODOS --
      public void updateBalas(GestorEnemigos gestorEnemigos) { //Metodo que actualiza la posicion de las balas y verifica las colisiones de estas
         ArrayList<Bala> balasAEliminar = new ArrayList<Bala>();
-        ArrayList<EnemigoCactus> enemigos = gestorEnemigos.getEnemigos();
+        ArrayList<Enemigo> enemigos = gestorEnemigos.getAllEnemies();
 
         for (Bala bala : balas) { //Verificacion de la colision de las balas
             bala.display();
