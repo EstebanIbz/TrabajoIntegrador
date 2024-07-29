@@ -10,7 +10,7 @@ class Tanque {
   public Tanque(PVector posicion) { //Costructor parametrizado
     this.transform = new Transform(posicion, new PVector(0.4, 0.4));
     this.imagen = new ImageComponent("1.png", transform);
-    this.colider = new Collider (transform, 80);
+    this.colider = new Collider (transform, 40);
     this.perder = false;
     this.puntaje = 0;
   }
@@ -41,7 +41,7 @@ class Tanque {
   public void disparar() { //Metodo para disparar, añadiendo balasal gestor balas creado en el escenario
     escenario.gestorBalas.addBullet(new Bala(transform.posicion.copy()));
   }
-  public void sumarPunto() { //Metodo para sumar el puntaje del jugador para ganar
-    this.puntaje++;
+  public void sumarPunto(int puntos) { //Metodo para sumar el puntaje del jugador para ganar
+    this.puntaje+= puntos;
   }
 }

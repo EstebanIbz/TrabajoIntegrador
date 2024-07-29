@@ -13,13 +13,13 @@ class GestorEnemigos {
 
   // -- MÉTODOS --
   public void generarEnemigoCactus() { //Metodo que genera los enemigos Cactus
-    float posY = random(height); // Posición Y aleatoria en la altura de la pantalla
+    float posY = random(75,540); // Posición Y aleatoria en la altura de la pantalla
     float posX = width-50; // Posición X en el borde izquierdo, un poco más allá del borde
 
     enemigosCactus.add(new EnemigoCactus(new PVector(posX, posY)));
   }
    public void generarEnemigoPiedra() { //Metodo que genera los enemigos Piedra
-    float posY = random(height); // Posición Y aleatoria en la altura de la pantalla
+    float posY = random(75,540); // Posición Y aleatoria en la altura de la pantalla
     float posX = width-50; // Posición X en el borde izquierdo, un poco más allá del borde
 
     enemigosPiedras.add(new EnemigoPiedra(new PVector(posX, posY)));
@@ -37,7 +37,7 @@ class GestorEnemigos {
       }
 
       if (!enemigoCactus.estaVivo()) { //Verifica si el enemigo sigue con vida
-        escenario.tanque.sumarPunto();
+        escenario.tanque.sumarPunto(enemigoCactus.puntaje);
         enemigosCactus.remove(i);
         generarEnemigoCactus();
       }
@@ -55,7 +55,7 @@ class GestorEnemigos {
         }
 
         if (!enemigoPiedras.estaVivo()) { //Verifica si el enemigo sigue con vida
-          escenario.tanque.sumarPunto();
+          escenario.tanque.sumarPunto(enemigoPiedras.puntaje);
           enemigosPiedras.remove(j);
           generarEnemigoPiedra();
         }

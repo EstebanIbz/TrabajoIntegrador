@@ -13,7 +13,7 @@ class Collider {
   //Metodo para verificar la colision de un obejto con otro
   public boolean verificarColision(Collider otroCollider) {
     float distancia = PVector.dist(this.transform.posicion, otroCollider.transform.posicion);
-    return distancia < this.radio + otroCollider.radio;
+    return distancia < this.radio/2 + otroCollider.radio/2;
   }
   
   public void displayCircle(color Color) { //Metodo para dibujar el radio de colision

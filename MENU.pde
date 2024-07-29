@@ -11,7 +11,7 @@ class MENU {
     //menuImage = loadImage("Menu.png");
     //tituloJuego= loadImage("titulo.png");
   }
-  public MENU(PApplet p) {
+  public MENU(PApplet p) { //
     myGif = new Gif(p, "PI.gif");
     myGif.loop();
   }
