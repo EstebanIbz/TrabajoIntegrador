@@ -5,6 +5,8 @@ class Tanque {
   private Collider colider;
   private boolean perder; //Atributo booleano que verifica si el usuario pierde
   private int puntaje; //Atributo del puntaje del jugador
+  private SpriteComponent sprite;
+  private int animacionEstado;
 
   // -- CONSTRUCTORES --
   public Tanque(PVector posicion) { //Costructor parametrizado
@@ -13,19 +15,27 @@ class Tanque {
     this.colider = new Collider (transform, 40);
     this.perder = false;
     this.puntaje = 0;
+    this.sprite = new SpriteComponent("spriteTank.png", 50, 50, 5);
+    this.animacionEstado = StateMachineAnimacion.MOV_RUEDAS;
   }
 
   // -- MÉTODOS --
   public void display() { //Metodo que dicuja el tanque
     println(this.puntaje);
-    imagen.draw();
+    //imagen.draw();
     this.colider.transform = this.transform;
     if (keyPressed) {
+      this.animacionEstado = StateMachineAnimacion.MOV_RUEDAS;
       if (keyCode == UP) {
         transform.move(0, -5, 1);
+        this.sprite.render(this.animacionEstado, new PVector(this.transform.posicion.x, this.transform.posicion.y));
       } else if (keyCode == DOWN) {
         transform.move(0, 10, 1);
+        this.sprite.render(this.animacionEstado, new PVector(this.transform.posicion.x, this.transform.posicion.y));
       }
+    } else {
+      this.animacionEstado = StateMachineAnimacion.REPOSO;
+      this.sprite.render(this.animacionEstado, new PVector(this.transform.posicion.x, this.transform.posicion.y));
     }
     this.colider.displayCircle(0); //Muestra el radio de colision
 
@@ -39,7 +49,8 @@ class Tanque {
   }
 
   public void disparar() { //Metodo para disparar, añadiendo balasal gestor balas creado en el escenario
-    escenario.gestorBalas.addBullet(new Bala(transform.posicion.copy()));
+    this.sprite.render(this.animacionEstado, new PVector(this.transform.posicion.x, this.transform.posicion.y));
+    
   }
   public void sumarPunto(int puntos) { //Metodo para sumar el puntaje del jugador para ganar
     this.puntaje+= puntos;

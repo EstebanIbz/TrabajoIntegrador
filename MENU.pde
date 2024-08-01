@@ -2,7 +2,7 @@
 class MENU {
   //private PImage menuImage;
   //private PImage tituloJuego;
-  Gif myGif;
+  Gif myGif; //Atributo que contiene el gif
 
 
   // -- CONSTRUCTORES --
@@ -11,7 +11,7 @@ class MENU {
     //menuImage = loadImage("Menu.png");
     //tituloJuego= loadImage("titulo.png");
   }
-  public MENU(PApplet p) { //
+  public MENU(PApplet p) { //Constructor para dibujar el gif del Menu
     myGif = new Gif(p, "PI.gif");
     myGif.loop();
   }

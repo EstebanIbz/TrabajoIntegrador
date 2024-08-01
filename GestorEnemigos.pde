@@ -66,7 +66,7 @@ class GestorEnemigos {
       }
     }
 
-    // aqui va otro for
+
   }
   public void display() { //Dibuja a los enemigos
     for (EnemigoCactus enemigoCactus : enemigosCactus) {
@@ -77,15 +77,14 @@ class GestorEnemigos {
     }
   }
 
-  // añadir otro for
-  public ArrayList<EnemigoCactus> getEnemigosCactus() { //Devuelve la lista de enemigos
+  public ArrayList<EnemigoCactus> getEnemigosCactus() { //Devuelve la lista de enemigos cactus
     return enemigosCactus;
   }
-  public ArrayList<EnemigoPiedra> getEnemigosPiedra() { //Devuelve la lista de enemigos
+  public ArrayList<EnemigoPiedra> getEnemigosPiedra() { //Devuelve la lista de enemigos cactus
     return enemigosPiedras;
   }
 
-  // añadir public arraylist
+  // Lista que devuelve todos los enemigos
   public ArrayList <Enemigo> getAllEnemies() {
     ArrayList <Enemigo> allEnemies = new ArrayList <Enemigo> ();
     allEnemies.addAll(enemigosCactus);
