@@ -19,13 +19,17 @@ class Escenario {
     imageMode(CENTER);
     image(escenarioImage, width/2, height/2);
     this.tanque.display();
+    fill(#15A01A);
+    textSize(40);
+    text(escenario.tanque.puntaje,265,50);
+    noFill();
     gestorEnemigos.display(); //Se visualizan en pantalla los enemigos
     gestorEnemigos.eliminarEnemigos(); //Se eliminan los enemigos cuando se verifica la colision con las balas
     gestorBalas.updateBalas(gestorEnemigos); //Se actualiza la posicion de las balas
     if (escenario.tanque.perder == true) {
       estado=StateMachine.DERROTA;
     }
-    if (escenario.tanque.puntaje == 10) {
+    if (escenario.tanque.puntaje >= 200) {
       estado=StateMachine.VICTORIA;
     }
     println(tanque.perder);

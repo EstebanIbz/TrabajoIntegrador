@@ -11,7 +11,7 @@ class Enemigo {
     this.vida = vida;
     this.puntaje = puntaje;
     this.transform = new Transform(posicion, new PVector (3.5, 3.5));
-    this.colision = new Collider(transform, 50);
+    this.colision = new Collider(transform, 40);
     this.imagen = new ImageComponent( imagenNombre,transform);
   }
 
