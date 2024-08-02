@@ -22,7 +22,8 @@ class Tanque {
   // -- MÉTODOS --
   public void display() { //Metodo que dicuja el tanque
     println(this.puntaje);
-    imagen.draw();
+    //imagen.draw();
+    this.sprite.render(this.animacionEstado, new PVector(this.transform.posicion.x, this.transform.posicion.y));
     this.colider.transform = this.transform;
     if (keyPressed) {
       this.animacionEstado = StateMachineAnimacion.MOV_RUEDAS;
@@ -30,7 +31,7 @@ class Tanque {
         transform.move(0, -5, 1);
         this.sprite.render(this.animacionEstado, new PVector(this.transform.posicion.x, this.transform.posicion.y));
       } else if (keyCode == DOWN) {
-        transform.move(0, 10, 1);
+        transform.move(0, 5, 1);
         this.sprite.render(this.animacionEstado, new PVector(this.transform.posicion.x, this.transform.posicion.y));
       }
     } else {

@@ -29,6 +29,8 @@ private AudioPlayer WinSong;
 // Setup, se ejecuta una vez
 void setup() {
   size(1000, 620); // Tamaño de la ventana
+  PFont miFuente = createFont("Fuente.ttf", 10);
+  textFont(miFuente);
   estado = StateMachine.MENU; // Se inicia el estado del juego en el MENU
   menu = new MENU(this); // Creamos el objeto menu de tipo MENU
   escenario = new Escenario(); // Creamos el objeto escenario de tipo ESCENARIO
@@ -47,6 +49,7 @@ void setup() {
 
 //Draw, se actualiza cada () tiempo
 void draw() {
+  background(0);
 
   // Realizamos las transiciones de las pantallas segun el estado
   switch (estado) {

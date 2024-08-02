@@ -29,8 +29,8 @@ class MENU {
 
   public void displayTexto() { //metodo para dibujar el texto del menu
     textAlign(CENTER, CENTER);
-    fill(#FFFFFF);
-    textSize(80);
+    fill(#000000);
+    textSize(60);
     text("Haga clic para iniciar", width/2, height-100);
   }
 }
