@@ -1,36 +1,36 @@
-/** Clase que gestiona los sprites de los elementos renderizables del juego */
+// Clase que gestiona los sprites de los elementos renderizables del juego */
 class SpriteComponent {
   /* -- ATRIBUTOS -- */
-  /** Representa al SpriteSheet del Objeto */
+  // Representa al SpriteSheet del Objeto 
   private PImage spriteSheet;
 
-  /** Representa el Ancho del Frame individual */
+  // Representa el Ancho del Frame individual 
   private int anchoFrame;
 
-  /** Representa el Alto del Frame individual */
+  // Representa el Alto del Frame individual 
   private int altoFrame;
 
-  /** Representa la Posición inicial x del Frame */
+  // Representa la Posición inicial x del Frame 
   private int xFrame;
 
-  /** Representa la Posición inicial y del Frame (contador para animación hacia arriba) */
+  // Representa la Posición inicial y del Frame (contador para animación hacia arriba) 
   private int yFrame;
 
-  /** Representa el Puntero al primer píxel en x de un frame */
+  // Representa el Puntero al primer píxel en x de un frame */
   private float punteroXFrame;
 
-  /** Representa el Puntero al primer píxel en x del siguiente frame a punteroXFrame; */
+  //Representa el Puntero al primer píxel en x del siguiente frame a punteroXFrame; 
   private float punteroXFrameSiguiente;
 
-  /** Representa la velocidad con la que se reproducirá la animación (la transición entre sprites) */
+  //Representa la velocidad con la que se reproducirá la animación (la transición entre sprites) 
   private float velocidadAnimacion;
 
-  /** Representa la velocidad con la que se reproducirá la animación (la transición entre sprites) */
+  //Representa la velocidad con la que se reproducirá la animación (la transición entre sprites) 
   private float escala;
 
   /* -- CONSTRUCTORES -- */
 
-  /** Constructor Parametrizado */
+  // Constructor Parametrizado 
   public SpriteComponent(String spriteSheet, int anchoFrame, int altoFrame, float escala) {
     this.spriteSheet = requestImage(spriteSheet);
     this.anchoFrame = anchoFrame;
@@ -38,12 +38,12 @@ class SpriteComponent {
     this.xFrame=0;
     this.yFrame=0;
     this.escala=escala;
-    this.velocidadAnimacion = 14;
+    this.velocidadAnimacion = 20;
   }
 
 
   /* -- MÉTODOS -- */
-  /** Diubjando los Sprites segun su estado */
+  // Diubjando los Sprites segun su estado 
   public void render(int estado, PVector posicion) {
     imageMode(CENTER);
     switch(estado) {
@@ -66,7 +66,7 @@ class SpriteComponent {
       }
     }
   }
-  /** Mueve la posicion del Frame en x del SpriteSheet */
+  // Mueve la posicion del Frame en x del SpriteSheet 
   public void moverSprite() {
     this.punteroXFrame += anchoFrame*velocidadAnimacion*DeltaTime.getDeltaTime(frameRate);
 

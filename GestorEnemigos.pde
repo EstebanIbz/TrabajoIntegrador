@@ -84,7 +84,7 @@ class GestorEnemigos {
     return enemigosPiedras;
   }
 
-  // Lista que devuelve todos los enemigos
+  // Lista que devuelve todos los enemigos para verificar en el GestorBalas
   public ArrayList <Enemigo> getAllEnemies() {
     ArrayList <Enemigo> allEnemies = new ArrayList <Enemigo> ();
     allEnemies.addAll(enemigosCactus);

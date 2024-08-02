@@ -49,7 +49,7 @@ void setup() {
 
 //Draw, se actualiza cada () tiempo
 void draw() {
-  background(0);
+  //background(0);
 
   // Realizamos las transiciones de las pantallas segun el estado
   switch (estado) {
