@@ -29,7 +29,7 @@ class Escenario {
     if (escenario.tanque.perder == true) {
       estado=StateMachine.DERROTA;
     }
-    if (escenario.tanque.puntaje >= 200) {
+    if (escenario.tanque.puntaje >= 500) {
       estado=StateMachine.VICTORIA;
     }
     println(tanque.perder);

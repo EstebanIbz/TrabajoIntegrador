@@ -40,11 +40,11 @@ void setup() {
 
   // definicion de la musica y sonidos del juego
   minim = new Minim(this);
-  musicaTitulo = minim.loadFile("OST.mp3"); //  La musica se carga
+  musicaTitulo = minim.loadFile("The Wait.mp3"); //  La musica se carga
   musicaTitulo.loop(); // La cancion se reproduce indefinidamente
-  Gameplaysong = minim.loadFile("Gameplay.mp3"); // carga la musica del estado Jugando
-  LostSong = minim.loadFile("lost.mp3");
-  WinSong = minim.loadFile("win.mp3");
+  Gameplaysong = minim.loadFile("Shellshock.mp3"); // carga la musica del estado Jugando
+  LostSong = minim.loadFile("Lose.mp3");
+  WinSong = minim.loadFile("Slayer.mp3");
 } // FIN SETUP
 
 //Draw, se actualiza cada () tiempo
