@@ -26,9 +26,9 @@ class Tanque {
     if (keyPressed) {
       this.animacionEstado = StateMachineAnimacion.MOV_RUEDAS;
       if (keyCode == UP) {
-        transform.move(0, -5, 1);
+        transform.move(0, -50);
       } else if (keyCode == DOWN) {
-        transform.move(0, 5, 1);
+        transform.move(0, 50);
       }
     } else {
       this.animacionEstado = StateMachineAnimacion.REPOSO;

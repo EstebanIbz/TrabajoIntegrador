@@ -8,7 +8,7 @@ class Bala {
 
   // -- CONSTRUCTORES --
   public  Bala(PVector posicion) { //Constructor por defecto
-    this.velocidad = 5;
+    this.velocidad = 60;
     this.daño = 5;
     this.transform = new Transform(posicion, new PVector (0.2, 0.2));
     this.colision = new Collider(transform, 50);
@@ -18,7 +18,7 @@ class Bala {
   // -- MÉTODOS --
   public void display() { //Dibuja las balas
     imagen.draw();
-    transform.move(this.velocidad, 0, 1); //Mueve la posicion de la bala en horizontal
+    transform.move(this.velocidad, 0); //Mueve la posicion de la bala en horizontal
     this.colision.displayCircle(0); //Muestra el radio de colision
   }
   public PVector getPosicion() { //Nos da la posicion de la bala
