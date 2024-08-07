@@ -33,7 +33,7 @@ class Tanque {
     } else {
       this.animacionEstado = StateMachineAnimacion.REPOSO;
     }
-    this.colider.displayCircle(0); //Muestra el radio de colision
+    //this.colider.displayCircle(0); //Muestra el radio de colision
 
     // evita que el jugador salga de la pantalla
     if (this.transform.posicion.y - this.colider.radio <= 5) {

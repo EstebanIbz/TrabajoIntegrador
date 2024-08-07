@@ -29,13 +29,6 @@ class Enemigo {
   public Collider getCollider() { //Metodo que devuelve el componente collider
     return colision;
   }
-  public void display() { //Metodo para dibujar el enemigo
-    imagen.draw();
-    this.transform.move(-90,0);
-    this.colision.displayCircle(0); //Muestra el radio de colision
-   
-  }
-  
    public boolean fueraDePantalla(){ //Metodo que verifica si el enemigo sale de la pantalla
     return transform.posicion.x < 0 || transform.posicion.x > width || transform.posicion.y < 0 || transform.posicion.y > height; 
   }

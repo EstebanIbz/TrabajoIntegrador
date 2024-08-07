@@ -1,6 +1,6 @@
 class EnemigoPiedra extends Enemigo {
 
-
+  private int velocidadX= -70;
   // -- CONSTRUCTORES --
   public EnemigoPiedra(PVector posicion) { //Constructor parametrizado
     super(posicion, 50, 50, "roca.png");  // cambiar parametros
@@ -8,7 +8,7 @@ class EnemigoPiedra extends Enemigo {
   }
   public void display() { //Metodo para dibujar el enemigo piedra
     imagen.draw();
-    this.transform.move(-70, 0);
-    this.colision.displayCircle(0); //Muestra el radio de colision
+    this.transform.move(velocidadX, 0);
+    //this.colision.displayCircle(0); //Muestra el radio de colision
   }
 }
