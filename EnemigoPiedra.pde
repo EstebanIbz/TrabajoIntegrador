@@ -8,7 +8,7 @@ class EnemigoPiedra extends Enemigo {
   }
   public void display() { //Metodo para dibujar el enemigo piedra
     imagen.draw();
-    this.transform.move(-30, 0);
+    this.transform.move(-70, 0);
     this.colision.displayCircle(0); //Muestra el radio de colision
   }
 }

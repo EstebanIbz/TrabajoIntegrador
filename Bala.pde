@@ -8,7 +8,7 @@ class Bala {
 
   // -- CONSTRUCTORES --
   public  Bala(PVector posicion) { //Constructor por defecto
-    this.velocidad = 60;
+    this.velocidad = 300;
     this.daño = 5;
     this.transform = new Transform(posicion, new PVector (0.2, 0.2));
     this.colision = new Collider(transform, 50);

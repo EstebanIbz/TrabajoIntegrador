@@ -1,14 +1,14 @@
 // Clase de VICTORIA del StateMachine
 class Victoria {
-  private PImage WinImage;
+  private PImage winImage;
   // -- CONSTRUCTORES --
   public Victoria() { //Constructor por defecto
-    this.WinImage = loadImage("Win.png");
+    this.winImage = loadImage("Win.png");
   }
 
   // -- MÉTODOS --
   public void display() { //Metodo que dibuja la pnatalla de victoria
     imageMode(CENTER);
-    image(WinImage, width/2, height/2);
+    image(winImage, width/2, height/2);
   }
 }

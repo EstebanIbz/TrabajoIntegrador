@@ -21,9 +21,9 @@ private Victoria win;
 // Variables para la musica
 private Minim minim;
 private AudioPlayer musicaTitulo;
-private AudioPlayer Gameplaysong;
-private AudioPlayer LostSong;
-private AudioPlayer WinSong;
+private AudioPlayer gameplaySong;
+private AudioPlayer lostSong;
+private AudioPlayer winSong;
 // -- FINALIZANDO LA DECLARACIÓN DE VARIABLES --
 
 // Setup, se ejecuta una vez
@@ -42,9 +42,14 @@ void setup() {
   minim = new Minim(this);
   musicaTitulo = minim.loadFile("The Wait.mp3"); //  La musica se carga
   musicaTitulo.loop(); // La cancion se reproduce indefinidamente
-  Gameplaysong = minim.loadFile("Shellshock.mp3"); // carga la musica del estado Jugando
-  LostSong = minim.loadFile("Lose.mp3");
-  WinSong = minim.loadFile("Slayer.mp3");
+  gameplaySong = minim.loadFile("Shellshock.mp3"); // carga la musica del estado Jugando
+  lostSong = minim.loadFile("Lose.mp3"); //
+  winSong = minim.loadFile("Slayer.mp3"); //
+  
+  musicaTitulo.setGain(-5); //baja la musica del titulo
+  gameplaySong.setGain(-5); //
+  winSong.setGain(-5);
+  lostSong.setGain(-5);
 } // FIN SETUP
 
 //Draw, se actualiza cada () tiempo
@@ -59,20 +64,20 @@ void draw() {
     break;
 
   case StateMachine.ESCENARIO:
-    Gameplaysong.play();  // reproducimos la cancion del juego
+    gameplaySong.play();  // reproducimos la cancion del juego
     escenario.display(); //Visualizacion del ESCENARIO
     break;
 
   case StateMachine.DERROTA:
     derrota.display(); // visualizacion de DERROTA
-    Gameplaysong.pause(); // pausamos la cancion del juego
-    LostSong.play(); // reproducimos la cancion de derrota
+    gameplaySong.pause(); // pausamos la cancion del juego
+    lostSong.play(); // reproducimos la cancion de derrota
     break;
 
   case StateMachine.VICTORIA:
     win.display();
-    Gameplaysong.pause(); // pausamos la cancion del juego
-    WinSong.play(); // reproducimos la cancion de victoria
+    gameplaySong.pause(); // pausamos la cancion del juego
+    winSong.play(); // reproducimos la cancion de victoria
     break;
   }
 
@@ -87,7 +92,7 @@ public void mousePressed() {
     println("MENU>ESCENARIO"); // se muestra por consola el escenario anterior
     musicaTitulo.pause(); // pausamos la musica del titulo
     musicaTitulo.rewind(); //Resetamos la musica del titulo
-    Gameplaysong.rewind(); //Reseteamos la musica del escenario
+    gameplaySong.rewind(); //Reseteamos la musica del escenario
     estado=StateMachine.ESCENARIO;//Pasamos a la pantalla escenario 
   }
   
@@ -95,8 +100,8 @@ public void mousePressed() {
   else if (estado==StateMachine.DERROTA) {
     
     estado=StateMachine.MENU;
-    LostSong.pause(); // pausamos la musica de derrota
-    LostSong.rewind(); // resetamos la musica de derrota
+    lostSong.pause(); // pausamos la musica de derrota
+    lostSong.rewind(); // resetamos la musica de derrota
     musicaTitulo.loop(); // ponemos la musica del titulo
     println("DERROTA");
     estado=StateMachine.MENU;
@@ -105,8 +110,8 @@ public void mousePressed() {
   // Cuando el usuario esta en la pantalla VICTORIA debe hacer click para cambiar a la pantalla MENU
   else if (estado==StateMachine.VICTORIA) {
     estado=StateMachine.MENU;
-    WinSong.pause(); // pausamos la musica de victoria
-    WinSong.rewind(); // resetamos la musica de victoria
+    winSong.pause(); // pausamos la musica de victoria
+    winSong.rewind(); // resetamos la musica de victoria
     musicaTitulo.loop();// ponemos la musica del titulo
     println("VICTORIA");
     estado=StateMachine.MENU;
